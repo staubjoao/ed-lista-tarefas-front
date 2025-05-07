@@ -1,0 +1,38 @@
+<app-tarefa-form [tarefaEntrada]="tarefaEntrada" (tarefaSaida)="onTarefaSaida($event)">
+</app-tarefa-form>
+
+<hr />
+
+<div *ngIf="!loading" class="text-center">
+    <p>Carregando tarefas...</p>
+</div>
+
+<table *ngIf="!loading && tarefas.length > 0" class="tabela-tarefas">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Título</th>
+            <th>Descrição</th>
+            <th>Status</th>
+            <th>Data final</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let tarefa of tarefas">
+            <td>{{ tarefa.id }}</td>
+            <td>{{ tarefa.tarefa }}</td>
+            <td>{{ tarefa.descricao | formatarTexto  }}</td>
+            <td [ngClass]="tarefa.status">{{ formatarStatus(tarefa.status) }}</td>
+            <td>{{ tarefa.dataFinal | formatarData }}</td>
+            <td>
+                <button (click)="editarTarefa(tarefa)">Editar</button>
+                <button (click)="excluirTarefa(tarefa.id)">Excluir</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<div *ngIf="!loading && tarefas.length === 0" class="text-center">
+    <p>Nenhuma tarefa encontrada!</p>
+</div>

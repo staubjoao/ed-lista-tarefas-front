@@ -1,1 +1,140 @@
-/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap");
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #f9f9f9;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 40px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.form-control {
+  flex: 1 1 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-label {
+  font-weight: 500;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.form-control input,
+.form-control select,
+.form-control textarea {
+  padding: 12px 14px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  transition: border-color 0.3s;
+}
+
+.form-control input:focus,
+.form-control select:focus,
+.form-control textarea:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.form-control textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.form-actions {
+  text-align: center;
+  margin-top: 32px;
+}
+
+.tabela-tarefas {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.tabela-tarefas th, .tabela-tarefas td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: left;
+}
+
+.tabela-tarefas th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+.tabela-tarefas tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.tabela-tarefas tr:hover {
+  background-color: #f1f1f1;
+}
+
+button {
+  margin-right: 8px;
+  padding: 6px 12px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:last-child {
+  background-color: #dc3545;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+.btn:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.pendente {
+  background-color: #FFF3CD;
+  color: #856404;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+}
+
+.concluido {
+  background-color: #D4EDDA;
+  color: #155724;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+}
+
+.cancelado {
+  background-color: #F8D7DA;
+  color: #721C24;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+}
+
+.em_andamento {
+  background-color: #CCE5FF;
+  color: #004085;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+}

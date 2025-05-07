@@ -1,0 +1,35 @@
+<form (ngSubmit)="salvar()" class="add-form">
+    <div class="form-row">
+        <div class="form-control">
+            <label for="titulo" class="form-label">Título</label>
+            <input type="text" id="titulo" name="titulo" maxlength="100" [(ngModel)]="tarefa" required>
+        </div>
+
+        <div class="form-control">
+            <label for="dataFinal" class="form-label">Data Final</label>
+            <input type="datetime-local" id="dataFinal" name="dataFinal" [(ngModel)]="dataFinal" required>
+        </div>
+    </div>
+
+    <div class="form-control">
+        <label for="descricao" class="form-label">Descrição</label>
+        <textarea id="descricao" name="descricao" [(ngModel)]="descricao" maxlength="100" required></textarea>
+    </div>
+
+    <div class="form-control">
+        <label for="status">Status da Tarefa</label>
+        <select id="status" name="status" [(ngModel)]="status" class="form-control" required>
+            <option value="" disabled selected>Selecione um status</option>
+            <option value="pendente">Pendente</option>
+            <option value="em_andamento">Em Andamento</option>
+            <option value="concluido">Concluído</option>
+            <option value="cancelado">Cancelado</option>
+        </select>
+    </div>
+
+    <div class="form-actions">
+        <button type="submit" class="btn" [disabled]="!tarefa || !dataFinal || !descricao || !status">
+            {{ modoEdicao ? 'Alterar' : 'Salvar' }}
+        </button>
+    </div>
+</form>
